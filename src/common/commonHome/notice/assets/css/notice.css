@@ -1,0 +1,5 @@
+.notice{width: 94.444%; background-color: #fff; padding: 3% 2%; margin: 3% auto; border-radius: 5px; -webkit-border-radius: 5px;}
+.notice .left{width: 55%; color: #323232; font-size: .45rem;}
+.notice .left .slider div{width: 100%; line-height: 1rem; overflow: hidden; text-overflow: ellipsis; -webkit-text-overflow: ellipsis; white-space: nowrap;}
+.notice .nmore{width: 15%; text-align: right; line-height: 1rem; border-left: 1px solid #cecece; font-size: .45rem; color: #323232;}
+.notice .tit{font-size: .45rem; color: #ee2f27; line-height: 1rem; margin-bottom: 0;}

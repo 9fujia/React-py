@@ -1,0 +1,24 @@
+.h-top{width: 100%; background-color: #25cb83;  padding: 10% 5%;}
+.h-top .tu{width: 20%;}
+.h-top .tu img{width: 100%;}
+.h-top .content{width: 60%; margin-left: 5%;}
+.h-top .content p{color: #fff; line-height: .6rem;}
+.h-top .content p.hname{font-size: .5rem;}
+.h-top .content p.htel,
+.h-top .content p.hpthy{font-size: .4rem;}
+.h-top .btn{width: 15%; text-align: center; height: 1rem; background-color: #fff; color: #25cb83; font-size: .45rem; line-height: 1rem; margin-top: 3%;}
+
+.cash{width: 100%; background-color: #fff; margin-bottom: 4%;}
+.cash .shang ul li{width: 33.333%; float: left; padding: 4% 0; text-align: center; border-right: 1px solid #e2e2e2; border-bottom: 1px solid #e2e2e2;}
+.cash .shang ul li:last-child{border-right: none;}
+.cash .shang ul li p{color: #fe5957; font-size: .5rem;}
+.cash .shang ul li span{color: #666666; font-size: .35rem;}
+.cash .xia ul li{width: 50%;}
+
+.cashlist{width: 100%; margin-bottom: 4%; background-color: #fff;}
+.cashlist ul li{width: 100%; height: 1.4rem; line-height: 1.4rem; padding: 0 3%; border-bottom: 1px solid #e9e9e9;}
+.cashlist ul li a{display: block; height: 100%; width: 100%;}
+.cashlist ul li p{font-size: .45rem; color: #333333;}
+.cashlist ul li i{color: #aaaaaa;}
+
+.center-btn{width: 96%; margin: 0 auto 5%; text-align: center; height: 1.5rem; line-height: 1.5rem; background-color: #25cb83; color: #fff; font-size: .5rem;}
