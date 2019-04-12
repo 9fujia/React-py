@@ -12,12 +12,14 @@ import Confirm from '../components/confirm/Confirm'
 import AddRess from '../components/AddRess/AddRess'
 import ManagerAddRess from "../components/managerAddRess/managerAddRess";
 import AddNewRess from "../components/addNewRess/AddNewRess";
-import Mima from '../components/shopMima/Mima'
-export default class App extends Component{
+import Mima from '../components/shopMima/Mima';
+import AuthUser from './AuthRoute/AuthUser';
+import {connect} from "react-redux";
+ class App extends Component{
   render(){
     return (
       <React.Fragment>
-      <Loading/>
+        {this.props.bLoading&&<Loading/>}
       <Switch>
         <Route path='/index' component={Home} />
         <Route path='/list' component={List} />
@@ -25,7 +27,10 @@ export default class App extends Component{
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
         <Route path='/detail' component={Detail} />
-        <Route path='/users' component={Center} />
+        {/*<Route path='/users' component={Center} />*/}
+
+        <AuthUser path="/users" component={Center}/>
+
         <Route path='/confirm' component={Confirm} />
         <Route path='/addRess' component={AddRess} />
         <Route path="/managerAddRess" component={ManagerAddRess}/>
@@ -37,3 +42,10 @@ export default class App extends Component{
     )
   }
 }
+const initMapStateToProps=state=>({
+  bLoading:state.bLoading
+})
+const initMapDispatchToProps=dispatch=>({
+
+})
+export default connect(initMapStateToProps,initMapDispatchToProps)(App)

@@ -8,32 +8,29 @@ export default class Banner extends Component{
     return (
       <div className="banner">
         <ul className="clearfix">
-          <li>
-              <img src={banner} alt=""/>
-              <div className="text-box"> 
-              </div>
-          </li>
-
-          <li>
-              <img src={banner} alt=""/>
-              <div className="text-box">
-              </div>
-          </li>
+            {
+                this.props.banner&&this.props.banner.map((item,index)=>(
+                    <li key={index}>
+                        <img src={'http://47.101.129.105/'+item.pic_address} alt=""/>
+                        <div className="text-box"></div>
+                    </li>
+                ))
+            }
 
         </ul>
 
       </div>
     )
   }
-  componentDidMount() {
-    var Swiper = new Swipe($('.banner')[0], {
-      auto: 2000,
-      continuous: true,
-      stopPropation: true,
-      callback: function (index, element) {
-        $('.banner ol li').removeClass('active');
-        $('.banner ol li').eq(index).addClass('active');
-      }
-    })
+  componentDidUpdate() {
+      this.props.banner &&  new Swipe($('.banner')[0], {
+          auto: 2000,
+          continuous: true,
+          stopPropation: true,
+          callback: function (index, element) {
+              $('.banner ol li').removeClass('active');
+              $('.banner ol li').eq(index).addClass('active');
+          }
+      })
   }
 }
