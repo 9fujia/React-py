@@ -1,14 +1,39 @@
 
-export const banner = ({url,dispatch})=>{
-    fetch(
-        'api/banner'
-    ).then(res=>res.json()).then(data=>{
-        dispatch({type:'getBanner',payload:data.data})
-        dispatch({type:'bLoading',payload:false})
+//没有返回值
+export const asyncAction = ({url,dispatch,type}) => {
 
-    })
-    return {type:'bLoading',payload:true}
-}
+  fetch(
+    url
+  ).then(
+    res=>res.json()
+  ).then(
+    res=>dispatch({type:type,payload:res.item})
+  );
+};
+
+
+//返回对象
+export const asyncAction2 = ({url,dispatch,type}) => {
+
+  fetch(
+    url
+  ).then(
+    res=>res.json()
+  ).then(
+    res=>{
+      setTimeout(()=>{
+        dispatch({type:type,payload:res.item});
+        dispatch({type:'VIEW_LOADING',payload:false});
+      },1000)
+    }
+  );
+
+  return {type:'VIEW_LOADING',payload:true};
+
+
+
+};
+
 
 //返回一个函数
 /*export const asyncAction3 = ({url,dispatch,type}) => {

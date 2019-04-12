@@ -8,20 +8,13 @@ import Seller from '../../common/commonHome/seller/Seller'
 import Onnew from '../../common/commonHome/onnew/Onnew'
 import Theme from '../../common/commonHome/theme/Theme'
 import Like from '../../common/commonHome/like/Like'
-import Footer from '../../common/footer/Footer';
-import {connect} from 'react-redux';
-import {banner} from '../../store/actions';
-class Home extends Component{
-    constructor(props){
-        super();
-        props.getBanner();
-    }
+import Footer from '../../common/footer/Footer'
+export default class Home extends Component{
     render(){
-
         return(
-            <>
+            <React.Fragment>
                <Header/>
-               <Banner banner={this.props.banner}/>
+               <Banner/>
                <Kind_1/>
                <Notice/> 
                <Boutique/>
@@ -30,18 +23,7 @@ class Home extends Component{
                 <Theme/>
                 <Like/>  
                 <Footer/>
-            </>
+            </React.Fragment>
         )
     }
-
 }
-const mapStateToProps = state=>({
-    banner:state.banner
-})
-const mapDispatchTOProps = dispatch=>({
-    getBanner:()=>dispatch(banner({
-        dispatch,
-    }))
-})
-const container = connect(mapStateToProps,mapDispatchTOProps)(Home)
-export default container;

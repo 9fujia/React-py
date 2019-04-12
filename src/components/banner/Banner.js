@@ -1,8 +1,8 @@
 import React,{Component} from 'react'
 import banner from './assets/img/banner.jpg'
 import './assets/css/slider.css';
-import $ from '../../../library/jquery-1.7.2';
-import Swipe from '../../../library/swipe'
+import $ from '../../library/jquery-1.7.2';
+import Swipe from '../../library/swipe'
 export default class Banner extends Component{
   render() {
     return (
